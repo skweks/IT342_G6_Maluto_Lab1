@@ -18,19 +18,19 @@ function Login() {
         alert(res.data);
       }
     } catch (err) {
-      alert("Server error. Please check if your backend is running.");
+      alert("Error: Could not connect to the backend.");
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 font-sans">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
         <div className="text-center mb-10">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full mb-4">
             <Lock size={32} />
           </div>
           <h2 className="text-3xl font-bold text-gray-800">Welcome Back</h2>
-          <p className="text-gray-500 mt-2">Please enter your details to sign in</p>
+          <p className="text-gray-500 mt-2">Sign in to access your dashboard</p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-6">
@@ -43,8 +43,8 @@ function Login() {
               <input
                 type="text"
                 required
-                className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
-                placeholder="Enter your username"
+                className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
+                placeholder="Your username"
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
@@ -59,7 +59,7 @@ function Login() {
               <input
                 type="password"
                 required
-                className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+                className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition"
                 placeholder="••••••••"
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -76,9 +76,9 @@ function Login() {
         </form>
 
         <p className="mt-8 text-center text-sm text-gray-600">
-          Don't have an account?{' '}
-          <Link to="/register" className="font-bold text-indigo-600 hover:text-indigo-500 underline decoration-2 underline-offset-4">
-            Register here
+          New student?{' '}
+          <Link to="/register" className="font-bold text-indigo-600 hover:underline">
+            Create an account
           </Link>
         </p>
       </div>
